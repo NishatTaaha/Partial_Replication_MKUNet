@@ -69,20 +69,17 @@ The datasets are not redistributed here. Obtain them from the original sources (
 
 ## Setup and differences from the paper
 
-| Item | This run | Paper |
-| --- | --- | --- |
-| Epochs | 100 | 200 |
-| Batch size | 8 | 16 |
-| Learning rate | 1e-4 | 1e-4 |
-| Optimiser | AdamW, weight decay 1e-4 | AdamW, weight decay 1e-4 |
-| Scheduler | CosineAnnealingLR (`eta_min=1e-6`) | not stated |
-| Loss | `structure_loss` (weighted BCE + weighted IoU, 1:1) | same |
-| Gradient clipping | 0.5 | 0.5 |
-| Multi-scale training | **Not used** | scales {0.75, 1.0, 1.25} |
-| Augmentation | None (`AUGMENT = False`) | None |
-| Input size (polyp) | 352×352 | 352×352 |
-| Seeds | 1–5 | five runs |
-
+| Item | This Code | Author's Code |
+|---|---|---|
+| **Epochs** | `EPOCHS = 100` | `--epoch default=200` |
+| **Batch Size** | `BATCH_SIZE = 8` | `--batchsize default=8` |
+| **Learning Rate (LR)** | `1e-4` | `--lr default=5e-4` |
+| **Optimizer** | `AdamW, weight_decay=1e-4` | `AdamW, weight_decay=1e-4` |
+| **Scheduler** | `CosineAnnealingLR(T_max=EPOCHS, eta_min=1e-6)` | `CosineAnnealingLR(T_max=opt.epoch, eta_min=1e-6)` |
+| **Loss** | `structure_loss` (weighted BCE + weighted IoU, w=1) | Same function, w=1 |
+| **Gradient Clipping** | `clip_gradient(optimizer, 0.5)` | Same (`--clip 0.5`) |
+| **Multi-scale Training** | Not used | Used: `size_rates = [0.75, 1, 1.25]` — each batch trained 3× at different scales |
+| **Seeds** | `SEEDS = [1,2,3,4,5]` | `for run in [1,2,3,4,5]` |
 
 ## Limitations
 
