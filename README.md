@@ -96,8 +96,6 @@ This work builds on the official MK-UNet implementation by the SLDGroup. Please 
 }
 ```
 
-Author of this replication: Nishat Taaha, B.Sc. in Electronics and Communication Engineering, Khulna University of Engineering & Technology (KUET). Report submitted to Md. Mostafijur Rahman, Texas Tech University.
-
 ## License
 
 The model and dataloader code originate from the authors' repository; refer to its license. Add your own license for the notebook and analysis code here.
