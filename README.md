@@ -8,15 +8,6 @@ This repository contains the notebook, per-seed results, training curves and fai
 - Authors' code: <https://github.com/SLDGroup/MK-UNet>
 
 
-## Scope
-
-| Item | Replicated here | Not replicated |
-| --- | --- | --- |
-| Model | MK-UNet (channels `[16, 32, 64, 96, 160]`, 0.3156 M params) | MK-UNet-T / S / M / L |
-| Datasets | ClinicDB, ColonDB | BUSI, ISIC18, DSB18, EM |
-| Metrics | Dice, IoU (test set, 5 seeds) | HD95 |
-| Analysis | Per-image metrics, worst-5 failure cases | Ablations (kernels, MKIR/MKIRA/GAG) |
-
 ## Environment
 
 - Platform: Kaggle notebook
