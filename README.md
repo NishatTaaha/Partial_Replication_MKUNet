@@ -74,14 +74,10 @@ The datasets are not redistributed here. Obtain them from the original sources (
 
 ## Limitations
 
-- The training setup was reduced to fit the available compute: 100 instead of 200 epochs, batch size 8, and **no multi-scale training**.
-- Only ClinicDB and ColonDB were run. The paper's other four datasets were not.
-- HD95 was not computed.
-- FLOPs/MACs were measured at 352×352, not at the paper's 256×256.
-- Per-image analysis and failure figures use seed 1 only.
-- Only the PyTorch seed is set (not NumPy or Python's `random`), so runs are not guaranteed to be bit-for-bit reproducible.
-- The validation sets are small (61 and 38 images), so checkpoint selection is noisy, especially on ColonDB.
-- The cause of the gap to the paper was not isolated, since no ablation of epochs, batch size or multi-scale training was run.
+- The training setup was reduced to fit the available compute: 100 instead of 200 epochs, batch size 8.
+- FLOPs were measured at 352×352 (0.619 G MACs), not at the paper’s 256×256 (0.314 G).
+- HD95 were not measured.
+- Only ClinicDB and ColonDB were run. The paper’s other four datasets were not.
 
 ## Acknowledgements and citation
 
